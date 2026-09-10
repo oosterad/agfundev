@@ -2,7 +2,7 @@
 layout: default
 ---
 
-![agdevfan logo](logo.jpeg)
+![agdevfan logo](logo2.png)
 
 ## About
 
@@ -10,7 +10,7 @@ layout: default
 
 ## Links
 
-### Memory App
+### <img src="playstore-icon.png" alt="" width="20" height="20"> Memory App
 
 {% include memory-app-desc.html %}
 
