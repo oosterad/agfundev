@@ -2,6 +2,18 @@
 layout: default
 ---
 
+<style>
+  .memory-desc {
+    position: relative;
+    padding-left: 50px;
+  }
+  .memory-desc img {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+</style>
+
 ![agdevfan logo](logo2.png)
 
 ## About
@@ -10,9 +22,9 @@ layout: default
 
 ## Links
 
-### <img src="playstore-icon.png" alt="" width="20" height="20"> Memory App
+### Memory App
 
-{% include memory-app-desc.html %}
+<p class="memory-desc"><img src="playstore-icon.png" alt="" width="40" height="40"> {% include memory-app-desc.html %}</p>
 
 [Get it on Google Play](https://play.google.com/store/apps/details?id=com.example.dummyapp)
 
