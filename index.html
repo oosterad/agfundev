@@ -1,3 +1,5 @@
+---
+---
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -81,6 +83,10 @@
     margin: 0;
   }
 
+  .about p + p {
+    margin-top: 0.75rem;
+  }
+
   .links {
     display: grid;
     grid-template-columns: 1fr;
@@ -147,10 +153,7 @@
     <section>
       <h2>About</h2>
       <div class="about">
-        <p>
-          I am a software developer that loves to explores new areas.
-          My current project is a memory game which I plan to release to the Android Play Store this year. And an iOS version will soon follow.
-        </p>
+        {% include about.html %}
       </div>
     </section>
 
@@ -159,7 +162,7 @@
       <div class="links">
         <a class="card" href="https://play.google.com/store/apps/details?id=com.example.dummyapp" target="_blank" rel="noopener">
           <div class="card-title"><img class="card-icon-img" src="playstore-icon.png" alt="">Memory App</div>
-          <p class="card-desc">Train your brain and have fun at the same time. The good old game of memory. Has live games against friends and online challenges as well.</p>
+          <div class="card-desc">{% include memory-app-desc.html %}</div>
         </a>
         <a class="card" href="https://github.com/example/dummy-repo" target="_blank" rel="noopener">
           <div class="card-title"><span class="card-icon">💻</span>GitHub Repo</div>
