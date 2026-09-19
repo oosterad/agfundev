@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy for Memory</title>
+<style>
+  :root {
+    --bg: #faf8f5;
+    --surface: #ffffff;
+    --text: #262220;
+    --text-muted: #6b6259;
+    --border: #e8e1d8;
+    --accent: #b8552a;
+    --accent-soft: #f3e3d8;
+    --link: #9a4520;
+    --code-bg: #f1ece4;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #1b1815;
+      --surface: #242019;
+      --text: #efe9e2;
+      --text-muted: #a89e92;
+      --border: #3a332b;
+      --accent: #e2814f;
+      --accent-soft: #3a2a1f;
+      --link: #f0925e;
+      --code-bg: #2c261e;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #1b1815;
+    --surface: #242019;
+    --text: #efe9e2;
+    --text-muted: #a89e92;
+    --border: #3a332b;
+    --accent: #e2814f;
+    --accent-soft: #3a2a1f;
+    --link: #f0925e;
+    --code-bg: #2c261e;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Source Serif 4", Georgia, "Times New Roman", serif;
+    line-height: 1.65;
+    padding: 48px 16px;
+  }
+  .page {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+  .back-link {
+    display: inline-block;
+    margin-bottom: 24px;
+    font-family: "IBM Plex Sans", system-ui, sans-serif;
+    font-size: 13px;
+    color: var(--text-muted);
+    text-decoration: none;
+  }
+  .back-link:hover { color: var(--link); }
+  .masthead {
+    border-bottom: 3px solid var(--accent);
+    padding-bottom: 20px;
+    margin-bottom: 8px;
+  }
+  .eyebrow {
+    font-family: "IBM Plex Sans", system-ui, sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 600;
+    margin: 0 0 10px;
+  }
+  h1 {
+    font-family: "IBM Plex Sans", system-ui, sans-serif;
+    font-size: clamp(28px, 5vw, 38px);
+    font-weight: 700;
+    margin: 0 0 8px;
+    text-wrap: balance;
+    letter-spacing: -0.01em;
+  }
+  .meta {
+    font-family: "IBM Plex Sans", system-ui, sans-serif;
+    font-size: 13px;
+    color: var(--text-muted);
+    margin: 0;
+  }
+  .meta strong { color: var(--text); }
+
+  nav.toc {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 18px 22px;
+    margin: 28px 0 40px;
+  }
+  nav.toc p {
+    font-family: "IBM Plex Sans", system-ui, sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin: 0 0 10px;
+    font-weight: 600;
+  }
+  nav.toc ol {
+    font-family: "IBM Plex Sans", system-ui, sans-serif;
+    margin: 0;
+    padding-left: 20px;
+    columns: 2;
+    column-gap: 24px;
+    font-size: 14px;
+  }
+  nav.toc li { margin-bottom: 6px; break-inside: avoid; }
+  nav.toc a { color: var(--link); text-decoration: none; }
+  nav.toc a:hover { text-decoration: underline; }
+
+  section { margin-bottom: 36px; scroll-margin-top: 16px; }
+  h2 {
+    font-family: "IBM Plex Sans", system-ui, sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--accent);
+    margin: 0 0 14px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+  }
+  h3 {
+    font-family: "IBM Plex Sans", system-ui, sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    margin: 20px 0 8px;
+  }
+  p { margin: 0 0 14px; }
+  ul { margin: 0 0 14px; padding-left: 22px; }
+  li { margin-bottom: 6px; }
+  a { color: var(--link); }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: "IBM Plex Sans", system-ui, sans-serif;
+    font-size: 13.5px;
+    margin: 12px 0 18px;
+  }
+  th, td {
+    text-align: left;
+    padding: 9px 10px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  th {
+    color: var(--text-muted);
+    font-weight: 600;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  .callout {
+    background: var(--accent-soft);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 8px 8px 0;
+    padding: 14px 18px;
+    font-family: "IBM Plex Sans", system-ui, sans-serif;
+    font-size: 14px;
+    margin: 14px 0;
+  }
+  .callout strong { color: var(--accent); }
+
+  .fill-in {
+    background: var(--code-bg);
+    border: 1px dashed var(--text-muted);
+    border-radius: 4px;
+    padding: 1px 6px;
+    font-family: ui-monospace, "SF Mono", Consolas, monospace;
+    font-size: 0.92em;
+  }
+
+  footer {
+    border-top: 1px solid var(--border);
+    margin-top: 40px;
+    padding-top: 18px;
+    font-family: "IBM Plex Sans", system-ui, sans-serif;
+    font-size: 12.5px;
+    color: var(--text-muted);
+  }
+
+  @media (max-width: 480px) {
+    nav.toc ol { columns: 1; }
+  }
+</style>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="page">
+  <a class="back-link" href="/">&larr; agfundev.nl</a>
+
+  <div class="masthead">
+    <p class="eyebrow">Legal &middot; Data Protection</p>
+    <h1>Privacy Policy for Memory</h1>
+    <p class="meta">Last updated: <strong>September 19, 2026</strong> &nbsp;&middot;&nbsp; Applies to the Memory mobile app (Android &amp; iOS)</p>
+  </div>
+
+  <div class="callout">
+    <strong>Before you publish this:</strong> replace every <span class="fill-in">bracketed placeholder</span> below with your real details (developer/legal name, contact email, and hosting/company address if you have one). This draft is accurate to what the app's code actually does as of the date above &mdash; re-check it if you add new features that collect data (chat, accounts, in-app purchases, analytics, etc.).
+  </div>
+
+  <nav class="toc" aria-label="Table of contents">
+    <p>On this page</p>
+    <ol>
+      <li><a href="#overview">1. Overview</a></li>
+      <li><a href="#info-we-collect">2. Information We Collect</a></li>
+      <li><a href="#how-we-use">3. How We Use It</a></li>
+      <li><a href="#advertising">4. Advertising</a></li>
+      <li><a href="#sharing">5. Third Parties We Use</a></li>
+      <li><a href="#children">6. Children's Privacy</a></li>
+      <li><a href="#retention">7. Data Retention &amp; Deletion</a></li>
+      <li><a href="#security">8. Security</a></li>
+      <li><a href="#rights">9. Your Rights</a></li>
+      <li><a href="#changes">10. Changes to This Policy</a></li>
+      <li><a href="#contact">11. Contact Us</a></li>
+    </ol>
+  </nav>
+
+  <section id="overview">
+    <h2>1. Overview</h2>
+    <p>Memory ("the App", "we", "us") is a memory-matching tile game. This policy explains what information the App collects, why, and how it's handled. The App does not require creating an account with an email or password &mdash; you're identified only by a random ID generated on your device when you install it.</p>
+  </section>
+
+  <section id="info-we-collect">
+    <h2>2. Information We Collect</h2>
+    <p>We collect only what's needed to make the App's multiplayer, friends, and notification features work:</p>
+    <table>
+      <tr><th>What</th><th>Why we have it</th><th>Optional?</th></tr>
+      <tr><td>A random device-generated ID</td><td>Identifies your profile on our server without needing an account, email, or password</td><td>No &ndash; created automatically on install</td></tr>
+      <tr><td>The username you choose</td><td>Shown to friends and opponents so people can find and challenge you</td><td>No &ndash; required to use social/multiplayer features</td></tr>
+      <tr><td>A flag emoji you pick</td><td>Lets you represent a country/region on your profile</td><td>Yes</td></tr>
+      <tr><td>Push notification token</td><td>Lets us deliver notifications (friend requests, game invites, turn reminders)</td><td>Yes &ndash; only collected if you allow notifications</td></tr>
+      <tr><td>Notification preferences</td><td>Remembers which notification categories you've turned on or off</td><td>&mdash;</td></tr>
+      <tr><td>Friend list &amp; friend requests</td><td>Usernames of people you've added or requested, to run the friends feature</td><td>Yes &ndash; only if you use friends</td></tr>
+      <tr><td>Game history (moves, times, results)</td><td>Needed to run async and live multiplayer games and track your stats</td><td>&mdash;</td></tr>
+      <tr><td>Advertising identifier &amp; device/app data</td><td>Collected by Google AdMob to serve ads (see Section 4)</td><td>Depends on your device's ad-tracking settings</td></tr>
+    </table>
+    <p>We do <strong>not</strong> collect your real name, email address, phone number, precise location, contacts, photos, or payment information. There is no in-app chat or free-text messaging between users &mdash; the only text you can send another player is a game invite code.</p>
+  </section>
+
+  <section id="how-we-use">
+    <h2>3. How We Use It</h2>
+    <ul>
+      <li>To operate core gameplay: matching you with opponents, syncing live games, scoring async challenges.</li>
+      <li>To run the friends system: sending, accepting, and denying friend requests.</li>
+      <li>To send push notifications you've opted into (friend activity, game invites, results).</li>
+      <li>To show ads that help keep the App free (see Section 4).</li>
+      <li>To keep the App working reliably and to diagnose problems.</li>
+    </ul>
+    <p>We do not sell your information, and we do not use it for anything beyond running and improving the App.</p>
+  </section>
+
+  <section id="advertising">
+    <h2>4. Advertising</h2>
+    <p>The App shows ads served by <strong>Google AdMob</strong> to help keep it free to play. AdMob may collect device identifiers (such as your advertising ID), general device information, and ad interaction data to select and measure ads.</p>
+    <p>We have configured the App to request only <strong>non-personalized, general-audience ads</strong> for all users &mdash; ads are not targeted using your browsing or app-usage history, and ad content is capped at a rating suitable for a general audience.</p>
+    <p>Google's use of this data is governed by <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">Google's Partner Sites policy</a> and their own <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a>. Depending on your region, you may see a consent prompt on first launch that lets you manage ad-related permissions &mdash; you can also review or reset your device's ad preferences in your phone's system settings.</p>
+  </section>
+
+  <section id="sharing">
+    <h2>5. Third Parties We Use</h2>
+    <table>
+      <tr><th>Service</th><th>Purpose</th></tr>
+      <tr><td>Google AdMob</td><td>Serving in-app ads</td></tr>
+      <tr><td>Expo push notification service</td><td>Delivering push notifications to your device (relays to Apple/Google's own notification systems)</td></tr>
+      <tr><td><span class="fill-in">Heroku</span></td><td>Hosting the backend server that stores game, friend, and profile data</td></tr>
+    </table>
+    <p>We share the minimum data each of these services needs to do its job. We do not sell or rent your information to anyone.</p>
+  </section>
+
+  <section id="children">
+    <h2>6. Children's Privacy</h2>
+    <p>Memory is a general-audience game that may also appeal to children. In line with Google Play's Families Policy and children's privacy laws (including COPPA), we do not knowingly collect personal information such as an email address, real name, or precise location from anyone, regardless of age, and all ads shown in the App are non-personalized and rated for a general audience &mdash; no behavioral ad targeting is applied to any user.</p>
+    <p>If you're a parent or guardian and believe your child has provided us with information beyond what's described in Section 2, please contact us using the details in Section 11 and we'll address it.</p>
+  </section>
+
+  <section id="retention">
+    <h2>7. Data Retention &amp; Deletion</h2>
+    <p>We keep your profile, friend, and game data for as long as your device ID remains active on the App. You can:</p>
+    <ul>
+      <li>Turn off notifications at any time in the App's settings.</li>
+      <li>Remove friends individually from within the App.</li>
+      <li>Uninstalling the App stops any further data collection from your device, though your existing profile record (identified only by the random device ID, not by anything personally identifying) may remain on our server unless you request deletion.</li>
+      <li>Request full deletion of your data by contacting us (Section 11) with your in-app username.</li>
+    </ul>
+  </section>
+
+  <section id="security">
+    <h2>8. Security</h2>
+    <p>We use industry-standard measures (such as encrypted connections between the App and our server) to protect your data. No method of transmission or storage is 100% secure, but we work to protect your information appropriately.</p>
+  </section>
+
+  <section id="rights">
+    <h2>9. Your Rights</h2>
+    <p>Depending on where you live, you may have rights to access, correct, or delete your data, or to object to certain processing (for example, under GDPR in the EU/UK). Since we don't collect identifying information like your email or name, we verify deletion/access requests using your in-app username. Contact us using the details below to exercise these rights.</p>
+  </section>
+
+  <section id="changes">
+    <h2>10. Changes to This Policy</h2>
+    <p>We may update this policy as the App changes. We'll update the "Last updated" date at the top of this page when we do. Continued use of the App after a change means you accept the updated policy.</p>
+  </section>
+
+  <section id="contact">
+    <h2>11. Contact Us</h2>
+    <p>Questions about this policy or your data? Reach out to:</p>
+    <p><span class="fill-in">AGFunDev</span><br>
+    <span class="fill-in">u2374393115@gmail.com</span></p>
+  </section>
+
+  <footer>
+    Memory &middot; Privacy Policy &middot; This document is a draft prepared for review before publication.
+  </footer>
+</div>
+</body>
+</html>
