@@ -26,10 +26,4 @@ layout: default
 
 <p class="memory-desc"><img src="playstore-icon.png" alt="" width="40" height="40"> {% include memory-app-desc.html %}</p>
 
-[Get it on Google Play](https://play.google.com/store/apps/details?id=com.example.dummyapp)
-
-### GitHub Repo
-
-Placeholder description of a project repository. Replace with the real GitHub link.
-
-[View on GitHub](https://github.com/example/dummy-repo)
+[Get it on Google Play (placeholder link for now)](https://play.google.com/store/apps/details?id=com.example.dummyapp)
