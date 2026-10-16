@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Memory – join my game</title>
+<!-- Link previews (WhatsApp, Telegram, Signal, ...) read these. They're static, so they can't show the invite code,
+     but the share text and the page itself do.
+     og:image must be an absolute URL and stay small (WhatsApp skips images over ~600 KB). -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Memory">
+<meta property="og:title" content="Memory – join my game!">
+<meta property="og:description" content="Play Memory against me. Don't have the app yet? Get it on Google Play.">
+<meta property="og:image" content="https://www.agfundev.nl/memory/share-icon.png">
+<meta property="og:image:width" content="400">
+<meta property="og:image:height" content="400">
+<meta property="og:url" content="https://www.agfundev.nl/memory/join/">
+<link rel="icon" href="../share-icon.png">
+<style>
+  :root {
+    --bg: #faf8f5;
+    --surface: #ffffff;
+    --text: #262220;
+    --text-muted: #6b6259;
+    --border: #e8e1d8;
+    --accent: #b8552a;
+    --accent-text: #ffffff;
+    --code-bg: #f1ece4;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #1b1815;
+      --surface: #242019;
+      --text: #efe9e2;
+      --text-muted: #a89e92;
+      --border: #3a332b;
+      --accent: #e2814f;
+      --accent-text: #1b1815;
+      --code-bg: #2c261e;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px 16px;
+    background: var(--bg);
+    color: var(--text);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.5;
+  }
+  main {
+    width: 100%;
+    max-width: 420px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 32px 24px;
+    text-align: center;
+  }
+  img.icon {
+    width: 96px;
+    height: 96px;
+    border-radius: 22px;
+  }
+  h1 {
+    font-size: 1.5rem;
+    margin: 16px 0 8px;
+  }
+  p {
+    margin: 0 0 16px;
+    color: var(--text-muted);
+  }
+  .code {
+    display: inline-block;
+    margin: 8px 0 8px;
+    padding: 12px 20px;
+    border-radius: 12px;
+    background: var(--code-bg);
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    word-break: break-all;
+  }
+  button.copy {
+    display: block;
+    margin: 0 auto 24px;
+    border: none;
+    background: none;
+    color: var(--accent);
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 8px;
+  }
+  a.store {
+    display: block;
+    padding: 14px 20px;
+    border-radius: 12px;
+    background: var(--accent);
+    color: var(--accent-text);
+    font-weight: 700;
+    text-decoration: none;
+  }
+  .steps {
+    text-align: left;
+    margin: 24px 0 0;
+    padding-left: 20px;
+    color: var(--text-muted);
+  }
+  [hidden] { display: none !important; }
+</style>
+</head>
+<body>
+<main>
+  <img class="icon" src="../share-icon.png" alt="Memory">
+  <h1 data-text="title">Join my Live Memory game!</h1>
+
+  <div id="with-code" hidden>
+    <p data-text="codeIntro">Your invite code:</p>
+    <div class="code" id="code"></div>
+    <button class="copy" id="copy" type="button" data-text="copy">Copy code</button>
+  </div>
+
+  <a class="store" href="https://play.google.com/store/apps/details?id=com.oosterad.memory" data-text="store">Get Memory on Google Play</a>
+
+  <ol class="steps">
+    <li data-text="step1">Install and open Memory.</li>
+    <li data-text="step2">Go to “live game” - “Accept invite”</li>
+    <li data-text="step3">Enter the code and tap “Join live game”.</li>
+  </ol>
+</main>
+<script>
+  // Dutch for Dutch browsers, English otherwise - same two languages as the app.
+  var texts = {
+    nl: {
+      title: "Doe mee met mijn Memory-spel!",
+      codeIntro: "Je uitnodigingscode:",
+      copy: "Kopieer code",
+      copied: "Gekopieerd!",
+      store: "Download Memory via Google Play",
+      step1: "Installeer en open Memory.",
+      step2: "Ga naar „Live spel” - „Accepteer uitnodiging”.",
+      step3: "Vul de code in en tik op „Accepteer”."
+    }
+  };
+  var lang = (navigator.language || "en").toLowerCase().indexOf("nl") === 0 ? "nl" : "en";
+  if (texts[lang]) {
+    document.documentElement.lang = lang;
+    document.querySelectorAll("[data-text]").forEach(function (el) {
+      var text = texts[lang][el.getAttribute("data-text")];
+      if (text) el.textContent = text;
+    });
+  }
+
+  // Only letters and digits - anything else in the link is ignored.
+  var code = new URLSearchParams(location.search).get("code");
+  if (code && /^[A-Za-z0-9]{1,16}$/.test(code)) {
+    document.getElementById("code").textContent = code;
+    document.getElementById("with-code").hidden = false;
+    var copyButton = document.getElementById("copy");
+    copyButton.addEventListener("click", function () {
+      if (!navigator.clipboard) return;
+      navigator.clipboard.writeText(code).then(function () {
+        copyButton.textContent = (texts[lang] || {}).copied || "Copied!";
+      }).catch(function () {});
+    });
+  }
+</script>
+</body>
+</html>
