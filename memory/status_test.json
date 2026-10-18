@@ -23,6 +23,20 @@
         "en": "A new version is in the Play Store.",
         "nl": "Er staat een nieuwe versie in de Play Store."
       }
+    },
+    {
+      "id": "2026-10-18_4",
+      "from": "2026-10-18T00:00:00+02:00",
+      "until": "2026-10-19T00:00:00+02:00",
+      "action": "update",
+      "title": {
+        "en": "Update available",
+        "nl": "Update beschikbaar"
+      },
+      "body": {
+        "title": "New games!",
+        "body": "Try out the new games:\n\n**Falling tiles**\n**Find the tile**\n\nYou can find them in the header at the top (when you have updated the app)."
+      }
     }
   ]
 }

@@ -93,3 +93,5 @@ fields, add a `minBuild` set to that build to update announcements.
 - `message`, `title` and `body` can be `{"en": ..., "nl": ...}` objects or plain strings. A missing
   language falls back to `en`.
 - Use `\n` for a line break in a text.
+- Put `**...**` around words in an announcement `body` to make them bold: `"Try **Falling tiles**"`.
+  An unclosed `**` shows as is.
