@@ -1,12 +1,28 @@
 {
-  "maintenance": null,
+  "maintenance": {
+    "start": "2026-09-30T22:00:00+02:00",
+    "end": "2026-10-01T00:00:00+02:00",
+    "message": {
+      "en": "We're moving to a new server.",
+      "nl": "We verhuizen naar een nieuwe server."
+    }
+  },
   "announcements": [
     {
-      "id": "2026-10-18_2",
+      "id": "2026-10-18_3",
       "from": "2026-10-18T00:00:00+02:00",
-      "until": "2026-10-20T00:00:00+02:00",
-      "title": "New game modes",
-      "body": "Try out the new games:\n\n- Falling tiles\n- Find the tile\n\nYou can find them in the header at the top."
+      "until": "2026-10-19T00:00:00+02:00",
+      "minBuild": 1,
+      "maxBuild": 999,
+      "action": "update",
+      "title": {
+        "en": "Update available",
+        "nl": "Update beschikbaar"
+      },
+      "body": {
+        "en": "A new version is in the Play Store.",
+        "nl": "Er staat een nieuwe versie in de Play Store."
+      }
     }
   ]
 }

@@ -4,3 +4,13 @@ title: agfundev
 description: Software developer enthusiastic
 #plugins:
 #  - jekyll-remote-theme
+# Replaces Jekyll's default exclude list, so its entries are repeated here.
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - memory/STATUS_README.md
