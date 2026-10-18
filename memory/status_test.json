@@ -25,13 +25,13 @@
       }
     },
     {
-      "id": "2026-10-18_4",
+      "id": "2026-10-18_5",
       "from": "2026-10-18T00:00:00+02:00",
       "until": "2026-10-19T00:00:00+02:00",
       "action": "update",
       "title": {
-        "en": "Update available",
-        "nl": "Update beschikbaar"
+        "en": "Update available!",
+        "nl": "Update beschikbaar!"
       },
       "body": {
         "title": "New games!",

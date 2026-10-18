@@ -74,7 +74,7 @@ device, and meant for its build. The next one comes up on a later fetch.
 | `body`     | no       | Text of the announcement.                                          |
 
 `minBuild` and `maxBuild` compare against the Android build number (the same number as the
-backend's `minAndroidBuild`). In practice you use one of them:
+backend's `minAndroidBuild`). In practice, you use one of them:
 
 - `maxBuild`: show an "update available" message only on builds older than the new release.
 - `minBuild`: show a message only on builds that have a new feature.
