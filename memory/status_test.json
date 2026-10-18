@@ -25,7 +25,7 @@
       }
     },
     {
-      "id": "2026-10-18_5",
+      "id": "2026-10-18_6",
       "from": "2026-10-18T00:00:00+02:00",
       "until": "2026-10-19T00:00:00+02:00",
       "action": "update",
@@ -33,10 +33,7 @@
         "en": "Update available!",
         "nl": "Update beschikbaar!"
       },
-      "body": {
-        "title": "New games!",
-        "body": "Try out the new games:\n\n**Falling tiles**\n**Find the tile**\n\nYou can find them in the header at the top (when you have updated the app)."
-      }
+      "body": "Try out the new games:\n\n**Falling tiles**\n**Find the tile**\n\nYou can find them in the header at the top (when you have updated the app)."
     }
   ]
 }
