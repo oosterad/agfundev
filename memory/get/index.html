@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Memomania – free memory games</title>
+<!-- Link previews (WhatsApp, Telegram, Signal, ...) read these; they don't run the redirect below.
+     og:image must be an absolute URL and stay small (WhatsApp skips images over ~600 KB). -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Memomania">
+<meta property="og:title" content="Memomania – play with me!">
+<meta property="og:description" content="Memory games, a daily memory and challenges. Free on Google Play.">
+<meta property="og:image" content="https://www.agfundev.nl/memory/share-icon.jpg">
+<meta property="og:image:width" content="1023">
+<meta property="og:image:height" content="552">
+<meta property="og:url" content="https://www.agfundev.nl/memory/get/">
+<link rel="icon" href="../app-icon.png">
+<style>
+  :root {
+    --bg: #faf8f5;
+    --surface: #ffffff;
+    --text: #262220;
+    --text-muted: #6b6259;
+    --border: #e8e1d8;
+    --accent: #b8552a;
+    --accent-text: #ffffff;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #1b1815;
+      --surface: #242019;
+      --text: #efe9e2;
+      --text-muted: #a89e92;
+      --border: #3a332b;
+      --accent: #e2814f;
+      --accent-text: #1b1815;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px 16px;
+    background: var(--bg);
+    color: var(--text);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.5;
+  }
+  main {
+    width: 100%;
+    max-width: 420px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 32px 24px;
+    text-align: center;
+  }
+  img.banner {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+  }
+  h1 {
+    font-size: 1.5rem;
+    margin: 16px 0 8px;
+  }
+  p {
+    margin: 0 0 24px;
+    color: var(--text-muted);
+  }
+  a.store {
+    display: block;
+    padding: 14px 20px;
+    border-radius: 12px;
+    background: var(--accent);
+    color: var(--accent-text);
+    font-weight: 700;
+    text-decoration: none;
+  }
+</style>
+</head>
+<body>
+<main>
+  <img class="banner" src="../share-icon.jpg" width="1023" height="552" alt="Memomania">
+  <h1 data-text="title">Play Memomania with me!</h1>
+  <p data-text="intro">Memory games, a daily memory and challenges. Free, no account needed.</p>
+  <a class="store" id="store" href="https://play.google.com/store/apps/details?id=com.oosterad.memory" data-text="store">Get Memomania on Google Play</a>
+</main>
+<script>
+  // Dutch for Dutch browsers, English otherwise - same two languages as the app.
+  var texts = {
+    nl: {
+      title: "Speel Memomania met me!",
+      intro: "Memoryspellen, een dagelijkse memory en uitdagingen. Gratis, geen account nodig.",
+      store: "Download Memomania via Google Play"
+    }
+  };
+  var lang = (navigator.language || "en").toLowerCase().indexOf("nl") === 0 ? "nl" : "en";
+  if (texts[lang]) {
+    document.documentElement.lang = lang;
+    document.querySelectorAll("[data-text]").forEach(function (el) {
+      var text = texts[lang][el.getAttribute("data-text")];
+      if (text) el.textContent = text;
+    });
+  }
+
+  // The app shares this page as ?utm_campaign=<place in the app>. Pass it on as Play's install
+  // referrer, so Play Console still shows which share button an install came from. Only short
+  // lowercase words - anything else in the link is ignored.
+  var store = document.getElementById("store");
+  var campaign = new URLSearchParams(location.search).get("utm_campaign");
+  var referrer = "utm_source=app_share";
+  if (campaign && /^[a-z_]{1,20}$/.test(campaign)) {
+    referrer += "&utm_campaign=" + campaign;
+  }
+  store.href += "&referrer=" + encodeURIComponent(referrer);
+
+  // Straight on to the store; the page itself is only seen if the redirect is blocked.
+  location.replace(store.href);
+</script>
+</body>
+</html>
