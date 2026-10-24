@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Only meaningful with the code or milestone from a shared link, so kept out of search results. -->
+<meta name="robots" content="noindex">
+<title>Memomania – I reached a milestone!</title>
+<!-- Link previews (WhatsApp, Telegram, Signal, ...) read these. They're static, so they can't show which
+     milestone it was, but the share text and the page itself do.
+     og:image must be an absolute URL and stay small (WhatsApp skips images over ~600 KB). -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Memomania">
+<meta property="og:title" content="Memomania – I reached a milestone!">
+<meta property="og:description" content="Don't have the app yet? Get it on Google Play.">
+<meta property="og:image" content="https://www.agfundev.nl/memory/milestone-share.jpg">
+<meta property="og:image:width" content="1023">
+<meta property="og:image:height" content="552">
+<meta property="og:url" content="https://www.agfundev.nl/memory/milestone/">
+<link rel="icon" href="../app-icon.png">
+<style>
+  :root {
+    --bg: #faf8f5;
+    --surface: #ffffff;
+    --text: #262220;
+    --text-muted: #6b6259;
+    --border: #e8e1d8;
+    --accent: #b8552a;
+    --accent-text: #ffffff;
+    --code-bg: #f1ece4;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #1b1815;
+      --surface: #242019;
+      --text: #efe9e2;
+      --text-muted: #a89e92;
+      --border: #3a332b;
+      --accent: #e2814f;
+      --accent-text: #1b1815;
+      --code-bg: #2c261e;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px 16px;
+    background: var(--bg);
+    color: var(--text);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.5;
+  }
+  main {
+    width: 100%;
+    max-width: 420px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 32px 24px;
+    text-align: center;
+  }
+  img.banner {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+  }
+  h1 {
+    font-size: 1.5rem;
+    margin: 16px 0 8px;
+  }
+  .milestone {
+    display: inline-block;
+    margin: 8px 0 24px;
+    padding: 12px 20px;
+    border-radius: 12px;
+    background: var(--code-bg);
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
+  p {
+    margin: 0 0 24px;
+    color: var(--text-muted);
+  }
+  a.store {
+    display: block;
+    padding: 14px 20px;
+    border-radius: 12px;
+    background: var(--accent);
+    color: var(--accent-text);
+    font-weight: 700;
+    text-decoration: none;
+  }
+  [hidden] { display: none !important; }
+</style>
+</head>
+<body>
+<main>
+  <img class="banner" src="../milestone-share.jpg" width="1023" height="552" alt="Memomania board with a trophy">
+  <h1 data-text="title">I reached a milestone in Memomania!</h1>
+  <div class="milestone" id="milestone" hidden></div>
+  <p data-text="intro">Memory games, a daily memory and challenges. Free, no account needed.</p>
+  <a class="store" id="store" href="https://play.google.com/store/apps/details?id=com.oosterad.memory" data-text="store">Get Memomania on Google Play</a>
+</main>
+<script>
+  // Dutch for Dutch browsers, English otherwise - same two languages as the app.
+  var texts = {
+    en: {
+      gamesPlayed: "Played {value} games",
+      tilesetComplete: "Completed every board size of the {value} set",
+      tileSetUnlocked: "Unlocked the {value} set",
+      boardSizeComplete: "Played every tile set on the {value} board",
+      memodexComplete: "Completed the whole Memodex"
+    },
+    nl: {
+      title: "Ik heb een mijlpaal gehaald in Memomania!",
+      intro: "Memoryspellen, een dagelijkse memory en uitdagingen. Gratis, geen account nodig.",
+      store: "Download Memomania via Google Play",
+      gamesPlayed: "{value} keer gespeeld",
+      tilesetComplete: "Alle bordgroottes van de set {value} voltooid",
+      tileSetUnlocked: "De set {value} vrijgespeeld",
+      boardSizeComplete: "Alle tegelsets op het {value}-bord gespeeld",
+      memodexComplete: "De hele Memodex voltooid"
+    }
+  };
+  var lang = (navigator.language || "en").toLowerCase().indexOf("nl") === 0 ? "nl" : "en";
+  document.documentElement.lang = lang;
+  if (lang !== "en") {
+    document.querySelectorAll("[data-text]").forEach(function (el) {
+      var text = texts[lang][el.getAttribute("data-text")];
+      if (text) el.textContent = text;
+    });
+  }
+
+  // The app shares this page as ?type=<milestone type>&value=<count, tile set or board size>,
+  // see milestoneShareLink in ShareApp.js. Only known types with a value of the expected shape
+  // are shown - anything else in the link is ignored, so the page can't be made to say just
+  // anything.
+  var valuePatterns = {
+    gamesPlayed: /^[0-9]{1,6}$/,
+    tilesetComplete: /^[a-z]{1,20}$/,
+    tileSetUnlocked: /^[a-z]{1,20}$/,
+    boardSizeComplete: /^[0-9]{1,2}x[0-9]{1,2}$/,
+    memodexComplete: /^$/
+  };
+  var params = new URLSearchParams(location.search);
+  var type = params.get("type");
+  var value = params.get("value") || "";
+  if (Object.prototype.hasOwnProperty.call(valuePatterns, type) && valuePatterns[type].test(value)) {
+    var milestone = document.getElementById("milestone");
+    milestone.textContent = texts[lang][type].replace("{value}", value);
+    milestone.hidden = false;
+  }
+
+  // Pass utm_campaign on as Play's install referrer, like memory/get/, so Play Console shows
+  // installs that came from a shared milestone.
+  var store = document.getElementById("store");
+  store.href += "&referrer=" + encodeURIComponent("utm_source=app_share&utm_campaign=milestone");
+</script>
+</body>
+</html>
