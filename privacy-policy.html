@@ -207,7 +207,7 @@
   <div class="masthead">
     <p class="eyebrow">Legal &middot; Data Protection</p>
     <h1>Privacy Policy for Memomania</h1>
-    <p class="meta">Last updated: <strong>October 23, 2026</strong> &nbsp;&middot;&nbsp; Applies to the Memomania mobile app (Android &amp; iOS)</p>
+    <p class="meta">Last updated: <strong>October 24, 2026</strong> &nbsp;&middot;&nbsp; Applies to the Memomania mobile app for Android</p>
   </div>
 
   <nav class="toc" aria-label="Table of contents">
@@ -238,7 +238,7 @@
     <table>
       <tr><th>What</th><th>Why we have it</th><th>Optional?</th></tr>
       <tr><td>A random server-side generated ID</td><td>Identifies your profile on our server without needing an account, email, or password</td><td>No &ndash; created automatically on install</td></tr>
-      <tr><td>The username you choose</td><td>Shown to friends and opponents so people can find and challenge you</td><td>No &ndash; required to use multiplayer features</td></tr>
+      <tr><td>A username (random at first, you can change it)</td><td>Shown on the leaderboards, and to friends and opponents so people can find and challenge you</td><td>No &ndash; created automatically on first start</td></tr>
       <tr><td>A flag emoji you pick</td><td>Shown next to your username on leaderboards and to your friends</td><td>Yes</td></tr>
       <tr><td>Push notification token</td><td>Lets us deliver notifications (friend requests, game invites, turn reminders)</td><td>Yes &ndash; only collected if you allow notifications</td></tr>
       <tr><td>Notification preferences</td><td>Remembers which notification categories you've turned on or off</td><td>&mdash;</td></tr>
@@ -246,9 +246,9 @@
       <tr><td>App version (build number)</td><td>Lets us ask you to update when your version is too old to work with our server, and tells us which version feedback came from</td><td>&mdash;</td></tr>
       <tr><td>Friend list &amp; friend requests</td><td>Usernames of people you've added or requested, to run the friends feature</td><td>Yes &ndash; only if you use friends</td></tr>
       <tr><td>Feedback you send</td><td>Questions, bug reports and ideas you send us through the feedback form in the App, so we can read and answer them</td><td>Yes &ndash; only if you send feedback</td></tr>
-      <tr><td>Game history (moves, times, results)</td><td>Needed to run async and live multiplayer games and track your stats</td><td>&mdash;</td></tr>
-      <tr><td>Crash reports</td><td>When the App crashes or hits an error, a report with the error details, App version, device model, Android version and your random ID is sent to us, so we can find and fix the problem</td><td>&mdash;</td></tr>
-      <tr><td>Advertising identifier &amp; device/app data</td><td>Collected by Google AdMob to serve ads (see Section 4)</td><td>Depends on your device's ad-tracking settings</td></tr>
+      <tr><td>Game history (moves, times, results)</td><td>Needed to run async and live multiplayer games, track your stats, rank you on the leaderboards, and send the daily puzzle reminder at the time you usually play</td><td>&mdash;</td></tr>
+      <tr><td>Crash reports</td><td>When the App crashes or hits an error, a report with the error details, App version, device model, Android version and your random ID is sent to us, so we can find and fix the problem</td><td>Yes &ndash; on by default, can be turned off under Profile &rarr; Privacy &rarr; "Send crash reports"</td></tr>
+      <tr><td>App set ID &amp; device/app data</td><td>Collected by Google AdMob to serve ads (see Section 4). The App does not have access to your advertising ID.</td><td>No</td></tr>
     </table>
     <p>The App never asks for your name, email address or phone number, and has no access to your location, contacts, photos or files. There is no in-app chat or free-text messaging between users.</p>
   </section>
@@ -256,18 +256,19 @@
   <section id="how-we-use">
     <h2>3. How We Use It</h2>
     <ul>
-      <li>To run the App's core gameplay, which is playable entirely solo with no data shared with other players; when you choose an optional multiplayer mode, this also covers matching you with opponents, syncing live games, and scoring async challenges.</li>
+      <li>To run the App's core gameplay, which is playable entirely solo; when you choose an optional multiplayer mode, this also covers matching you with opponents, syncing live games, and scoring async challenges.</li>
+      <li>To show the leaderboards: your best results, including those of solo games and the daily puzzle, are shown there to other players with your username and flag.</li>
       <li>To run the friends system: sending, accepting, and denying friend requests.</li>
       <li>To send push notifications you've opted into (friend activity, game invites, results).</li>
       <li>To show ads that help keep the App free (see Section 4).</li>
-      <li>To keep the App working reliably and to diagnose problems.</li>
+      <li>To keep the App working reliably and to diagnose problems, using crash reports unless you turned them off.</li>
     </ul>
     <p>We do not sell your information, and we do not use it for anything beyond running and improving the App.</p>
   </section>
 
   <section id="advertising">
     <h2>4. Advertising</h2>
-    <p>The App shows ads served by <strong>Google AdMob</strong> to help keep it free to play. AdMob may collect device identifiers (such as your advertising ID), general device information, and ad interaction data to select and measure ads.</p>
+    <p>The App shows ads served by <strong>Google AdMob</strong> to help keep it free to play. AdMob may collect an app-specific device identifier (the App set ID), general device information, and ad interaction data to select and measure ads. The App blocks access to your advertising ID, so AdMob cannot use it.</p>
     <p>We have configured the App to request only <strong>non-personalized, general-audience ads</strong> for all users &mdash; ads are not targeted using your browsing or app-usage history, and ad content is capped at a rating suitable for a general audience.</p>
     <p>Google's use of this data is governed by <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">Google's Partner Sites policy</a> and their own <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a>. You can review or reset your device's ad preferences in your phone's system settings.</p>
   </section>
@@ -277,7 +278,7 @@
     <table>
       <tr><th>Service</th><th>Purpose</th></tr>
       <tr><td>Google AdMob</td><td>Serving in-app ads</td></tr>
-      <tr><td>Expo push notification service</td><td>Delivering push notifications to your device (relays to Apple/Google's own notification systems)</td></tr>
+      <tr><td>Expo push notification service</td><td>Delivering push notifications to your device (relays to Google's own notification system)</td></tr>
       <tr><td>Heroku</td><td>Hosting the backend server that stores game, friend, and profile data</td></tr>
       <tr><td>Sentry</td><td>Collecting crash and error reports from the App (no IP address, username or other personal details are sent)</td></tr>
     </table>
@@ -292,13 +293,24 @@
 
   <section id="retention">
     <h2>7. Data Retention &amp; Deletion</h2>
-    <p>We keep your flag, time-zone, friend, and game data for as long as your device ID remains active on the App. You can:</p>
+    <p>We keep your flag, time-zone, friend, and game data for as long as your device ID remains active on the App, or until you delete it. You can:</p>
     <ul>
       <li>Turn off notifications at any time in the App's settings.</li>
+      <li>Turn off crash reports at any time under Profile &rarr; Privacy &rarr; "Send crash reports". No further reports are sent from your device from that moment on.</li>
       <li>Remove friends individually from within the App.</li>
-      <li>Uninstalling the App stops any further data collection from your device, though your existing profile record (identified only by the random device ID, not by anything personally identifying) may remain on our server unless you request deletion.</li>
-      <li>Request full deletion of your data by contacting us (Section 11) with your in-app username or from within the app using the "request data deletion" link. When a user has played less than 5 games, all data will be deleted. Otherwise game statistics are kept, but everything related to the user will be deleted.</li>
+      <li>Delete your data yourself at any time with the "Delete my data" link on the Profile screen (see below).</li>
+      <li>Uninstalling the App stops any further data collection from your device, but does not delete your data from our server. Use "Delete my data" before uninstalling, or contact us (Section 11) with your in-app username if you no longer have the App.</li>
     </ul>
+
+    <h3>What "Delete my data" removes</h3>
+    <p>When you use "Delete my data", we remove from our server:</p>
+    <ul>
+      <li>your username, flag, push notification token, time zone and notification settings;</li>
+      <li>all your friends and friend requests (you also disappear from your friends' lists);</li>
+      <li>challenges still in progress and any feedback messages you sent.</li>
+    </ul>
+    <p>If you played fewer than 5 games, everything about you is deleted, including your game results. If you played 5 games or more, your finished game results are kept for overall game statistics, but they are no longer linked to a username or anything else that identifies you. Everything the App stored on your phone is cleared as well. This cannot be undone. If you keep using the App afterwards, it starts again as a new, empty player.</p>
+    <p>Crash reports are kept by Sentry for up to 30 days and then deleted automatically. "Delete my data" does not remove crash reports that were already sent, but they expire within those 30 days.</p>
   </section>
 
   <section id="security">
@@ -308,7 +320,7 @@
 
   <section id="rights">
     <h2>9. Your Rights</h2>
-    <p>Depending on where you live, you may have rights to access, correct, or delete your data, or to object to certain processing (for example, under GDPR in the EU/UK). Since we don't collect identifying information like your email or name, we verify deletion/access requests using your in-app username. Contact us using the details below to exercise these rights.</p>
+    <p>Depending on where you live, you may have rights to access, correct, or delete your data, or to object to certain processing (for example, under GDPR in the EU/UK). You can delete your data yourself in the App (see Section 7). For other requests, or if you no longer have the App: since we don't collect identifying information like your email or name, we verify requests using your in-app username. Contact us using the details below to exercise these rights.</p>
   </section>
 
   <section id="changes">
