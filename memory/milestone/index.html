@@ -103,7 +103,7 @@
   <img class="banner" src="../milestone-share.jpg" width="1023" height="552" alt="Memomania board with a trophy">
   <h1 data-text="title">I reached a milestone in Memomania!</h1>
   <div class="milestone" id="milestone" hidden></div>
-  <p data-text="intro">Memory games, a daily memory and challenges. Free, no account needed.</p>
+  <p data-text="intro">Memory games, a daily memory, quick games and challenges. Free, no account needed.</p>
   <a class="store" id="store" href="https://play.google.com/store/apps/details?id=com.oosterad.memory" data-text="store">Get Memomania on Google Play</a>
 </main>
 <script>
@@ -114,17 +114,19 @@
       tilesetComplete: "Completed every board size of the {value} set",
       tileSetUnlocked: "Unlocked the {value} set",
       boardSizeComplete: "Played every tile set on the {value} board",
-      memodexComplete: "Completed the whole Memodex"
+      memodexComplete: "Completed the starter Memodex",
+      memodexFullComplete: "Completed the whole Memodex, all tile sets"
     },
     nl: {
       title: "Ik heb een mijlpaal gehaald in Memomania!",
-      intro: "Memoryspellen, een dagelijkse memory en uitdagingen. Gratis, geen account nodig.",
+      intro: "Memoryspellen, een dagelijkse memory, snelle spellen en uitdagingen. Gratis, geen account nodig.",
       store: "Download Memomania via Google Play",
       gamesPlayed: "{value} keer gespeeld",
       tilesetComplete: "Alle bordgroottes van de set {value} voltooid",
       tileSetUnlocked: "De set {value} vrijgespeeld",
       boardSizeComplete: "Alle tegelsets op het {value}-bord gespeeld",
-      memodexComplete: "De hele Memodex voltooid"
+      memodexComplete: "De start-Memodex voltooid",
+      memodexFullComplete: "De hele Memodex voltooid, alle tegelsets"
     }
   };
   var lang = (navigator.language || "en").toLowerCase().indexOf("nl") === 0 ? "nl" : "en";
@@ -145,7 +147,8 @@
     tilesetComplete: /^[a-z]{1,20}$/,
     tileSetUnlocked: /^[a-z]{1,20}$/,
     boardSizeComplete: /^[0-9]{1,2}x[0-9]{1,2}$/,
-    memodexComplete: /^$/
+    memodexComplete: /^$/,
+    memodexFullComplete: /^$/
   };
   var params = new URLSearchParams(location.search);
   var type = params.get("type");
