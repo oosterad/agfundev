@@ -1,0 +1,89 @@
+---
+layout: default
+title: MarbleMania – logic puzzles (preview)
+description: "Preview of MarbleMania, a logic puzzle game: roll the marbles to the bottom right and arrive with exactly the right number. Coming soon to Google Play."
+image:
+  path: /marblemania/promo/marblemania-og.jpg
+  width: 1200
+  height: 630
+---
+
+<!-- Only layout here: colours and fonts come from the site theme (jekyll-theme-hacker). -->
+<style>
+  .promo img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+  }
+  .promo .notice {
+    margin: 0 0 24px;
+    padding: 12px 16px;
+    border: 1px dashed #f0a050;
+    border-radius: 8px;
+    color: #f0a050;
+  }
+  .promo .intro {
+    margin: 20px 0;
+    font-size: 1.1em;
+  }
+  .promo .feature {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 28px;
+    align-items: center;
+    margin: 48px 0;
+  }
+  /* every other row: picture on the right */
+  .promo .feature:nth-child(even) img { order: 2; }
+  .promo .feature h3 { margin-top: 0; }
+  @media (max-width: 720px) {
+    .promo .feature { grid-template-columns: 1fr; gap: 12px; }
+    .promo .feature:nth-child(even) img { order: 0; }
+  }
+</style>
+
+<div class="promo">
+  <p class="notice" role="note"><strong>Preview only:</strong> MarbleMania is still in development and not yet available on Google Play. The game, the screens and the features on this page may still change.</p>
+
+  <img src="promo/marblemania-hero.webp" width="1920" height="1080"
+       alt="MarbleMania: marbles roll down. Mostly.">
+
+  <p class="intro">A logic puzzle game on a small board that gets nasty. Roll your marbles from the top left to the bottom right, and arrive with <strong>exactly</strong> the right number of marbles.</p>
+
+  <div class="features">
+    <div class="feature">
+      <img src="promo/marblemania-rules.webp" width="1920" height="1080" alt="Reach the bottom right with exactly 2 marbles" loading="lazy">
+      <div>
+        <h3>Count before you roll</h3>
+        <p>Every board tells you how many marbles you need at the finish. Pick up a +1 on the way, lose one on a −1, and make sure the numbers add up when you get there.</p>
+      </div>
+    </div>
+    <div class="feature">
+      <img src="promo/marblemania-items.webp" width="1920" height="1080" alt="A board with a whirlwind lifting the marbles one row up" loading="lazy">
+      <div>
+        <h3>Marbles roll down. Mostly.</h3>
+        <p>Teleporters move your marbles across the board, whirlwinds lift them one row up, gates only open with enough marbles, and walls and one-way passages block the easy route.</p>
+      </div>
+    </div>
+    <div class="feature">
+      <img src="promo/marblemania-make.webp" width="1920" height="1080" alt="The board editor" loading="lazy">
+      <div>
+        <h3>Make your own boards</h3>
+        <p>Build your own puzzles in the editor. A built-in solver checks every board, so you know it can be solved and how short the best route is.</p>
+      </div>
+    </div>
+    <div class="feature">
+      <img src="promo/marblemania-share.webp" width="1920" height="1080" alt="The World Board with boards shared by players" loading="lazy">
+      <div>
+        <h3>Share them on the World Board</h3>
+        <p>Share your boards with other players, play theirs and give them stars. Sort and filter to find the most played or best rated boards.</p>
+      </div>
+    </div>
+  </div>
+
+  <h2>Coming soon to Google Play</h2>
+  <p>MarbleMania is not released yet. Until then, have a look at <a href="../memory/">Memomania</a>, my memory game that is already available.</p>
+
+  <p style="margin-top: 40px"><a href="../">agfundev home</a> · <a href="privacy-policy.html">Privacy policy</a></p>
+</div>

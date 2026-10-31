@@ -1,0 +1,93 @@
+---
+layout: default
+title: Memomania – free memory games
+description: "Memory games for every mood: a daily puzzle, live duels, challenges and quick games. Free on Google Play."
+image:
+  path: /memory/promo/memomania-og.jpg
+  width: 1200
+  height: 630
+---
+
+<!-- Only layout here: colours and fonts come from the site theme (jekyll-theme-hacker). -->
+<style>
+  .promo img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+  }
+  .promo .intro {
+    margin: 20px 0;
+    font-size: 1.1em;
+  }
+  .promo .store {
+    display: inline-block;
+    padding: 10px 22px;
+    border: 2px solid #b5e853;
+    border-radius: 999px;
+    color: #b5e853;
+    font-weight: bold;
+    text-decoration: none;
+    text-shadow: none;
+  }
+  .promo .store:hover { background: rgba(181, 232, 83, .12); }
+  .promo .feature {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 28px;
+    align-items: center;
+    margin: 48px 0;
+  }
+  /* every other row: picture on the right */
+  .promo .feature:nth-child(even) img { order: 2; }
+  .promo .feature h3 { margin-top: 0; }
+  @media (max-width: 720px) {
+    .promo .feature { grid-template-columns: 1fr; gap: 12px; }
+    .promo .feature:nth-child(even) img { order: 0; }
+  }
+</style>
+
+<div class="promo">
+  <img src="promo/memomania-hero.webp" width="1600" height="800"
+       alt="Memomania: memory games for every mood, shown on three phones">
+
+  <p class="intro">Play the classic memory game solo, against the computer or against friends and players from all over the world. Or race the clock in the quick games.</p>
+  <a class="store" href="https://play.google.com/store/apps/details?id=com.oosterad.memory">Get it free on Google Play</a>
+
+  <div class="features">
+    <div class="feature">
+      <img src="promo/memomania-daily.webp" width="1200" height="900" alt="The daily memory screen with today's top 10" loading="lazy">
+      <div>
+        <h3>A new puzzle every day</h3>
+        <p>The same board for everyone, one try. Beat the clock, keep your misses low and see where you rank in today's top 10. Look back at the previous 7 days and keep your streak going.</p>
+      </div>
+    </div>
+    <div class="feature">
+      <img src="promo/memomania-challenges.webp" width="1200" height="900" alt="The world challenges screen" loading="lazy">
+      <div>
+        <h3>Play friends, or the world</h3>
+        <p>Play a real-time match against a friend. Can't play at the same time? Challenge a friend, or the whole world, to the same board. Both play when it suits them, and the best score wins.</p>
+      </div>
+    </div>
+    <div class="feature">
+      <img src="promo/memomania-quick.webp" width="1200" height="900" alt="The falling tiles game" loading="lazy">
+      <div>
+        <h3>Race the clock</h3>
+        <p>Falling tiles, Find the tile and Blind memory: quick games that test how sharp you really are. Pick your own speed and beat your record.</p>
+      </div>
+    </div>
+    <div class="feature">
+      <img src="promo/memomania-yours.webp" width="1200" height="900" alt="The Memodex and the theme picker" loading="lazy">
+      <div>
+        <h3>Collect, unlock, show off</h3>
+        <p>Fill your Memodex by playing every tile set on every board size, earn badges and pick from more than twenty themes, from wood and Lego to robots and sunflowers.</p>
+      </div>
+    </div>
+  </div>
+
+  <h2>Completely free</h2>
+  <p>No purchases, no subscriptions, no account needed. All game modes are available to everyone. The app is supported by ads.</p>
+  <a class="store" href="https://play.google.com/store/apps/details?id=com.oosterad.memory">Get it free on Google Play</a>
+
+  <p style="margin-top: 40px"><a href="../">agfundev home</a> · <a href="../privacy-policy.html">Privacy policy</a></p>
+</div>

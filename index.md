@@ -22,8 +22,16 @@ layout: default
 
 ## Links
 
-### Memory App
+### Memomania: Memory Games
 
-<p class="memory-desc"><img src="playstore-icon.png" alt="" width="40" height="40"> {% include memory-app-desc.html %}</p>
+<p class="memory-desc"><img src="memory-playstore-icon.png" alt="" width="40" height="40"> {% include memory-app-desc.html %}</p>
 
-[Get it on Google Play](https://play.google.com/store/apps/details?id=com.oosterad.memory)
+[Get it on Google Play](https://play.google.com/store/apps/details?id=com.oosterad.memory)  
+[More information](memory/)
+
+### Marblemania: Logic Games
+
+<p class="memory-desc"><img src="marbles-playstore-icon.jpg" alt="" width="40" height="40"> {% include marbles-app-desc.html %}</p>
+
+[More information](marblemania/) (preview)
+
