@@ -1,6 +1,6 @@
 {
   "maintenance": {
-    "start": "2026-10-31T112:25:00+02:00",
+    "start": "2026-10-31T12:30:00+02:00",
     "end": "2026-10-31T13:00:00+02:00",
     "message": {
       "en": "We're moving to a new server.",
