@@ -1,12 +1,19 @@
 {
-  "maintenance": null,
+  "maintenance": {
+    "start": "2026-10-31T10:00:00+02:00",
+    "end": "2026-10-31T11:00:00+02:00",
+    "message": {
+      "en": "We're moving to a new server.",
+      "nl": "We verhuizen naar een nieuwe server."
+    }
+  },
   "announcements": [
     {
-      "id": "2026-10-18_2",
-      "from": "2026-10-18T00:00:00+02:00",
-      "until": "2026-10-20T00:00:00+02:00",
-      "title": "New game modes",
-      "body": "Try out the new games:\n\n- Falling tiles\n- Find the tile\n\nYou can find them in the header at the top (when you have updated the app)."
+      "id": "2026-10-31",
+      "from": "2026-10-31T00:00:00+02:00",
+      "until": "2026-11-02T00:00:00+02:00",
+      "title": "Memodex",
+      "body": "Click on a cell and start playing that board immediately!"
     }
   ]
 }
