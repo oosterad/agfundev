@@ -14,6 +14,13 @@
       "until": "2026-11-02T00:00:00+02:00",
       "title": "Memodex",
       "body": "Click on a cell and start playing that board immediately!"
+    },
+    {
+      "id": "2026-10-31_2",
+      "from": "2026-10-31T00:00:00+02:00",
+      "until": "2026-11-02T00:00:00+02:00",
+      "title": "Solo badges",
+      "body": "There was an error in the counting of the solo badges. This has been corrected."
     }
   ]
 }
