@@ -26,7 +26,7 @@ layout: default
 
 <p class="memory-desc"><img src="memory-playstore-icon.png" alt="" width="40" height="40"> {% include memory-app-desc.html %}</p>
 
-[More information](memory/)
+[More information](memory/)  
 [Get it on Google Play](https://play.google.com/store/apps/details?id=com.oosterad.memory)  
 
 ### Marblemania: Logic Games
