@@ -14,6 +14,17 @@
       "until": "2026-11-02T00:00:00+02:00",
       "title": "Solo badges",
       "body": "There was an error in the counting of the solo badges. This has been corrected."
+    },
+    {
+      "id": "2026-11-colored-buttons",
+      "minBuild": 118,
+      "from": "2026-11-07T00:00:00+01:00",
+      "until": "2026-11-21T00:00:00+01:00",
+      "title": {"en": "Colored buttons", "nl": "Gekleurde knoppen"},
+      "body": {
+        "en": "The menu buttons now have colors. Prefer them plain? Turn it off under **User preferences → Theme**.",
+        "nl": "De menuknoppen hebben nu kleuren. Liever zonder? Zet het uit bij **Gebruikersinstellingen → Thema**."
+      }
     }
   ]
 }
